@@ -69,7 +69,7 @@ html {
     border-color: #337cac;
     color: #fff;
     height: 100%;
-    grid-area: 2 / 4 / 6 / 5;/*start on row-line 2 and column-line 4, and end on row-line 6 and column line 5*/
+    grid-area: 3 / 4 / 6 / 5;/*start on row-line 2 and column-line 4, and end on row-line 6 and column line 5*/
   }
   
   .equal-sign:hover {
