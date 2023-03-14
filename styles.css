@@ -31,7 +31,14 @@ html {
     padding-left: 10px;
     border-radius: 25px 25px 0px 0px;
   }
-  
+
+  .previous-operand{
+    display: inline;    
+  }
+  .current-operand{
+    display: inline;
+  }
+
   button {
     height: 60px;
     background-color: #fff;
@@ -54,17 +61,17 @@ html {
     color: #337cac;
   }
   
-  .all-clear {
+  #all-clear {
     background-color: #f0595f;
     border-color: #b0353a;
     color: #fff;
   }
   
-  .all-clear:hover {
+  #all-clear:hover {
     background-color: #f17377;
   }
   
-  .equal-sign {
+  #equal-sign {
     background-color: #2e86c0;
     border-color: #337cac;
     color: #fff;
@@ -72,7 +79,7 @@ html {
     grid-area: 3 / 4 / 6 / 5;/*start on row-line 2 and column-line 4, and end on row-line 6 and column line 5*/
   }
   
-  .equal-sign:hover {
+  #equal-sign:hover {
     background-color: #4e9ed4;
   }
   

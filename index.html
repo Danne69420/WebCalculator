@@ -11,35 +11,33 @@
 <body>
     <div class="calculator">
 
-        <input type="text" class="calculator-screen" value="0" disabled />
-        
+        <input type="text" class="calculator-screen" value="0" disabled id="input"/>
         <div class="calculator-keys">
-          
-          <button type="button" class="operator" value="+">+</button>
-          <button type="button" class="operator" value="-">-</button>
-          <button type="button" class="operator" value="*">&times;</button>
-          <button type="button" class="operator" value="/">&divide;</button>
+          <button type="button" class="operator" value="+" >+</button>
+          <button type="button" class="operator" value="*" >&times;</button>
+          <button type="button" class="operator" value="/" >&divide;</button>
+          <button type="button" class="operator" value="-" >-</button>
       
-          <button type="button" value="7">7</button>
-          <button type="button" value="8">8</button>
-          <button type="button" value="9">9</button>
-          <button type="button" value="DEL">DEL</button>    <!--Maybe change to backspace arrow? possibly as an <img>-->
+          <button type="button" value="7" class="number">7</button>
+          <button type="button" value="8" class="number">8</button>
+          <button type="button" value="9" class="number">9</button>
+          <button type="button" value="DEL" id="DEL">DEL</button>    <!--Maybe change to backspace arrow? possibly as an <img>-->
       
-          <button type="button" value="4">4</button>
-          <button type="button" value="5">5</button>
-          <button type="button" value="6">6</button>
+          <button type="button" value="4" class="number">4</button>
+          <button type="button" value="5" class="number">5</button>
+          <button type="button" value="6" class="number">6</button>
+    
+    
+          <button type="button" value="1" class="number">1</button>
+          <button type="button" value="2" class="number">2</button>
+          <button type="button" value="3" class="number">3</button>
       
       
-          <button type="button" value="1">1</button>
-          <button type="button" value="2">2</button>
-          <button type="button" value="3">3</button>
+          <button type="button" value="0" class="number">0</button>
+          <button type="button" value="." class="number">.</button>
+          <button type="button" id="all-clear" value="all-clear" >AC</button>
       
-      
-          <button type="button" value="0">0</button>
-          <button type="button" class="decimal" value=".">.</button>
-          <button type="button" class="all-clear" value="all-clear">AC</button>
-      
-          <button type="button" class="equal-sign" value="=">=</button>
+          <button type="button" id="equal-sign" value="=" >=</button>
       
         </div>
       </div>
