@@ -1,6 +1,9 @@
 "use strict";
 
-var input = document.getElementById('input'), // input/output button
+
+//need to wrap it all in a window.onload function so that html elements load properly before thay are assigned to variables
+window.onload = function(){
+  var input = document.getElementById('input'), // input/output button
   number = document.querySelectorAll('.number'), // number buttons
   operator = document.querySelectorAll('.operator'), // operator buttons
   result = document.getElementById('equal-sign'), // equal button
@@ -119,3 +122,4 @@ result.addEventListener("click", function() {
 clear.addEventListener("click", function() {
   input.innerHTML = "";
 })
+}
