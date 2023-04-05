@@ -19,43 +19,47 @@ for (var i = 0; i < number.length; i++) {
     console.log(input.value);
     var lastChar = currentString[currentString.length - 1];
 
+    if(input.value === "0"){
+      input.value = "";
+    }
+
     // if result is not diplayed, just keep adding
     if (resultDisplayed === false) {
-      input.innerHTML += e.target.innerHTML;
+      input.value += e.target.innerHTML;
     } else if (resultDisplayed === true && lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
       // if result is currently displayed and user pressed an operator
       // we need to keep on adding to the string for next operation
       resultDisplayed = false;
-      input.innerHTML += e.target.innerHTML;
+      input.value += e.target.innerHTML;
     } else {
       // if result is currently displayed and user pressed a number
       // we need clear the input string and add the new input to start the new opration
       resultDisplayed = false;
-      input.innerHTML = "";
-      input.innerHTML += e.target.innerHTML;
+      input.value = "";
+      input.value += e.target.innerHTML;
     }
 
   });
 }
 
-// adding click handlers to number buttons
+// adding click handlers to operator buttons
 for (var i = 0; i < operator.length; i++) {
   operator[i].addEventListener("click", function(e) {
 
     // storing current input string and its last character in variables - used later
-    var currentString = input.innerHTML;
+    var currentString = input.value;
     var lastChar = currentString[currentString.length - 1];
 
     // if last character entered is an operator, replace it with the currently pressed one
     if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
       var newString = currentString.substring(0, currentString.length - 1) + e.target.innerHTML;
-      input.innerHTML = newString;
+      input.value = newString;
     } else if (currentString.length == 0) {
       // if first key pressed is an opearator, don't do anything
       console.log("enter a number first");
     } else {
       // else just add the operator pressed to the input
-      input.innerHTML += e.target.innerHTML;
+      input.value += e.target.innerHTML;
     }
 
   });
@@ -65,7 +69,7 @@ for (var i = 0; i < operator.length; i++) {
 result.addEventListener("click", function() {
 
   // this is the string that we will be processing eg. -10+26+33-56*34/23
-  var inputString = input.innerHTML;
+  var inputString = input.value;
 
   // forming an array of numbers. eg for above string it will be: numbers = ["10", "26", "33", "56", "34", "23"]
   var numbers = inputString.split(/\+|\-|\×|\÷/g);
@@ -113,13 +117,13 @@ result.addEventListener("click", function() {
     add = operators.indexOf("+");
   }
 
-  input.innerHTML = numbers[0]; // displaying the output
+  input.value = numbers[0]; // displaying the output
 
   resultDisplayed = true; // turning flag if result is displayed
 });
 
 // clearing the input on press of clear
 clear.addEventListener("click", function() {
-  input.innerHTML = "";
+  input.value = "";
 })
 }
