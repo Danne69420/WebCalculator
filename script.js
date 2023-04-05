@@ -8,8 +8,8 @@ window.onload = function(){
   operator = document.querySelectorAll('.operator'), // operator buttons
   result = document.getElementById('equal-sign'), // equal button
   clear = document.getElementById('all-clear'), // clear button
+  deletebutton = document.getElementById('DEL'), // delete button
   resultDisplayed = false; // flag to keep an eye on what output is displayed
-
 // adding click handlers to number buttons
 for (var i = 0; i < number.length; i++) {
   number[i].addEventListener("click", function(e) {
@@ -125,5 +125,15 @@ result.addEventListener("click", function() {
 // clearing the input on press of clear
 clear.addEventListener("click", function() {
   input.value = "";
+})
+
+//event handler for delete button
+deletebutton.addEventListener("click", function(){
+  var chars = input.value.split('');
+  chars.splice(chars.length-1, 1);
+  input.value = chars.join("");
+  if(input.value == null){
+    input.value = "0";
+  }
 })
 }
