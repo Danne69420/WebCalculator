@@ -1,4 +1,4 @@
-# Webbkalkylator
+# Webcalculator
 Calculator for website made with html, css, and js
 
 Mostly based on this codepen: https://codepen.io/lalwanivikas/pen/eZxjqo
