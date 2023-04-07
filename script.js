@@ -1,3 +1,5 @@
+// mostly based on this https://codepen.io/lalwanivikas/pen/eZxjqo
+
 "use strict";
 
 
@@ -135,5 +137,34 @@ deletebutton.addEventListener("click", function(){
   if(input.value == null){
     input.value = "0";
   }
+})
+
+//event handler for keyboard input
+document.addEventListener("keydown", function(e){
+
+  console.log(e.key);
+
+  //manually create a click event to send to the buttons eventhandler.
+  const clickEvent = new Event("click");
+  //check what key was pressed and treat it as if the corrosponding button was clicked
+  for(var i = 0; i < number.length; i++){
+    if(number[i].value == e.key){
+      number[i].dispatchEvent(clickEvent);
+    }
+  }
+  for(var i = 0; i < operator.length; i++){
+    if(operator[i].value == e.key){
+      operator[i].dispatchEvent(clickEvent);  
+    }
+    
+  }
+  if(e.key == "Enter"){
+    result.dispatchEvent(clickEvent);
+  }
+  if(e.key == "Backspace"){
+    deletebutton.dispatchEvent(clickEvent);
+  }
+  //There is no way to press All Clear with the keyboard as it doesn't have a good standardised keyboard button assosiated with it.
+  //This also prevents the user from misclicking and accidentaly clearing everything.
 })
 }
